@@ -1,5 +1,18 @@
-.img-carrito {
-    width: 40px;
-    margin: 10px;
-    border-radius: 25%;
+.cartDiv{
+    padding: 10px;
+    border: 1px white solid;
+    border-radius: 40%;
+    a{
+        display: inline-block;
+        width: fit-content;
+        border-radius: 40%;
+    }
+    .img-carrito {
+        width: 40px;
+        border-radius: 40%;
+    }
+    .valid{
+        margin: 10px;
+        margin-left: 0;
+    }
 }

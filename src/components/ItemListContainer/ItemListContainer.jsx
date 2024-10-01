@@ -1,8 +1,9 @@
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
-import { getProducts , getProductsByCat } from "../../asynmock";
 import { useParams } from "react-router-dom";
+import { db } from "../../services/config";
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 
 const ItemListContainer = () => {
@@ -10,15 +11,22 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const {idCategory} = useParams ()
 
-    useEffect(()=>{
+    useEffect(()=> {
+      const boneesProducts = idCategory ? query(collection(db, "products"), where("idCat", "==", idCategory)) : (collection(db,"products"))
 
-        const showProducts = idCategory ? getProductsByCat : getProducts;
-
-        showProducts(idCategory)
-          .then(res => setProducts(res))
-          .catch(error => console.log(error))
-
-    }, [idCategory])
+      getDocs(boneesProducts)
+      .then (res => {
+          const newProducts = res.docs.map(doc =>{
+              const data = doc.data()
+              return {id:doc.id , ...data}
+          })
+          setProducts(newProducts)
+      })
+      .catch(error => console.log(error))
+      .finally(()=>{
+          console.log("finished process")
+      })
+  }, [idCategory])
 
   return (
     <>

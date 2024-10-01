@@ -6,7 +6,8 @@
     width: 70%;
     margin: 10px;
     img{
-        width: 500px;
+        max-width: 50%;
+        min-width: 200px;
         margin: 60px 40px;
         border-radius: 5%;
         }
