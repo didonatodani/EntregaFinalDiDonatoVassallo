@@ -15,7 +15,7 @@ const ItemDetail = ({id, name, price, size, img, detail, stock}) => {
   const quantityHandler = (quantity) =>{
     setAddQuantity(quantity)
     console.log("Productos agregador:" + quantity)
-    const item = {id, name, price}
+    const item = {id, name, price, img}
     addToCart(item, quantity)
     toast.info('Item added to cart', {
       position: "top-right",
