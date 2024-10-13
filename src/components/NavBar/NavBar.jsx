@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Dropdown from 'react-bootstrap/Dropdown';
 import "./NavBar.css"
 import CartWidget from "../CartWidget/CartWidget"
 import { Link , NavLink } from "react-router-dom"
@@ -14,19 +16,21 @@ const NavBar = () => {
               <NavLink to={"/"}>HOME</NavLink>
           </li>
           <li>
-              <NavLink to={"/category/tees"}>TEES</NavLink>
-          </li>
-          <li>
-             <NavLink to={"/category/bags"}>BAGS</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/category/sweatshirts"}>SWEATSHIRTS</NavLink>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">SHOP</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item as={NavLink} to="/allproducts">ALL PRODUCTS</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} to="/category/tees">TEES</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} to="/category/bags">BAGS</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} to="/category/sweatshirts">SWEATSHIRTS</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>            
           </li>
         </ul>
       </nav>
       <CartWidget/>
     </header>
   )
-}
+};
 
 export default NavBar

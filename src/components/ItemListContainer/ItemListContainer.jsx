@@ -23,14 +23,13 @@ const ItemListContainer = () => {
           setProducts(newProducts)
       })
       .catch(error => console.log(error))
-      .finally(()=>{
-          console.log("finished process")
-      })
   }, [idCategory])
 
   return (
     <>
-      <h2 className="productsTitle">BONEES PRODUCTS</h2>
+      {
+        <h2 className="productsTitle">{(idCategory || 'ALL PRODUCTS').toUpperCase()}</h2>
+      }
       <ItemList products={products}/>
     </>
   )

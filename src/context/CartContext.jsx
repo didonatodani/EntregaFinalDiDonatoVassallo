@@ -12,16 +12,14 @@ export const CartProvider = ({children}) =>{
     const [total, setTotal] = useState(0);
     const [totalQuantity, setTotalQuantity] = useState(0);
 
-    console.log(cart);
-
     const addToCart = (item, quantity) =>{
         const existingProduct = cart.find((prod) => prod.item.id === item.id);
-        
         if (!existingProduct) {
             setCart((prev) => [...prev, { item, quantity }]);
             setTotalQuantity((prev) => prev + quantity);
             setTotal((prev) => prev + (item.price * quantity));
         } else {
+            
             const updatedCart = cart.map((prod) =>{
                 if (prod.item.id === item.id) {
                     return { ...prod, quantity: prod.quantity + quantity};
@@ -34,6 +32,34 @@ export const CartProvider = ({children}) =>{
             setTotal((prev) => prev + (item.price * quantity));
         }
     }
+    
+    const increaseQuantity = (id) => {
+        const updatedCart = cart.map((prod) => {
+            if (prod.item.id === id && prod.quantity < prod.item.stock) {
+            return { ...prod, quantity: prod.quantity + 1 };
+            }
+        return prod;
+        });
+        setCart(updatedCart);
+        const product = cart.find((prod) => prod.item.id === id);
+        if (product && product.quantity < product.item.stock) {
+            setTotalQuantity((prev) => prev + 1);
+            setTotal((prev) => prev + product.item.price);
+        }
+    };
+
+    const decreaseQuantity = (id) => {
+        const updatedCart = cart.map((prod) => {
+            if (prod.item.id === id && prod.quantity > 1) {
+                return { ...prod, quantity: prod.quantity - 1 };
+            }
+            return prod;
+        });
+        setCart(updatedCart);
+        const product = cart.find((prod) => prod.item.id === id);
+        setTotalQuantity((prev) => prev - 1);
+        setTotal((prev) => prev - product.item.price);
+    };
 
     const deleteProduct = (id) => {
         const deletedProduct = cart.find((prod) => prod.item.id === id)
@@ -78,7 +104,7 @@ export const CartProvider = ({children}) =>{
             }
 
     return (
-        <CartContext.Provider value={{cart, total, totalQuantity, addToCart, deleteProduct, emptyCart, emptyCartBuying}}>
+        <CartContext.Provider value={{cart, total, totalQuantity, addToCart, increaseQuantity, decreaseQuantity, deleteProduct, emptyCart, emptyCartBuying}}>
             {children}
         </CartContext.Provider>
     )

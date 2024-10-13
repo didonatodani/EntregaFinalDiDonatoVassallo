@@ -9,7 +9,6 @@ const CartWidget = () => {
 
   return (
     <div className="cartDiv">
-
         {
         totalQuantity > 0 && <strong>{totalQuantity}</strong>
         }

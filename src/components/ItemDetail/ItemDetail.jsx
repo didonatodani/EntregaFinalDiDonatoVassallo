@@ -13,9 +13,9 @@ const ItemDetail = ({id, name, price, size, img, detail, stock}) => {
   const {addToCart} = useContext(CartContext)
 
   const quantityHandler = (quantity) =>{
+
     setAddQuantity(quantity)
-    console.log("Productos agregador:" + quantity)
-    const item = {id, name, price, img}
+    const item = {id, name, price, img, stock}
     addToCart(item, quantity)
     toast.info('Item added to cart', {
       position: "top-right",
@@ -26,7 +26,7 @@ const ItemDetail = ({id, name, price, size, img, detail, stock}) => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+      })
   }
  
   return (
@@ -34,16 +34,15 @@ const ItemDetail = ({id, name, price, size, img, detail, stock}) => {
         <img src={img} alt={name}/>
         <div className="detailText">
           <h2>{name}</h2>
-          <p>price: {price} €</p>
-          <p>size: {size}</p>
+          <p>{price} €</p>
+          <p>Size: {size}</p>
           <p>{detail}</p>
           {
-            addQuantity > 0 ? (<Link to="/cart">Finish shopping</Link>) : (<Counter initial={1} stock={stock} addToCart={quantityHandler}/>)
+            addQuantity > 0 ? (<Link to="/cart">Go to cart</Link>) : ( stock != 0 ? <Counter initial={1} stock={stock} addToCart={quantityHandler}/> : <strong>Out of stock</strong>)
           }
-          <Link to={-1}>go back</Link>
+          <Link to={-1}>Back</Link>
         </div>
     </div>
   )
-}
-
+} 
 export default ItemDetail

@@ -10,8 +10,8 @@ const Cart = () => {
     if (totalQuantity === 0){
         return(
             <div className="emptyCart">
-                <h2>Cart is empty!</h2>
-                <Link to={"/"}>CHECK PRODUCTS AGAIN &nbsp;&nbsp;:)</Link>
+                <h2>Your cart is empty</h2>
+                <Link to={"/allproducts"}>Go to Bonees Products &nbsp;&nbsp;:)</Link>
             </div>
         )
     }
@@ -22,7 +22,7 @@ const Cart = () => {
         }
 
         <h3>Total: {total} €</h3>
-        <h3>Total Qty: {totalQuantity} u</h3>
+        <h3>Items in cart: {totalQuantity}u</h3>
         <button onClick={()=> emptyCart()}>empty cart</button>
         <Link to={'/checkout'}>Check Out</Link>
 

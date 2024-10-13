@@ -11,7 +11,7 @@ const Counter = ({initial, stock, addToCart}) => {
     }
 
     const substract = () =>{
-        if (counter > stock){
+        if (counter > 1){
             setCounter (counter -1)
         }
     }
@@ -23,7 +23,7 @@ const Counter = ({initial, stock, addToCart}) => {
             <strong>{counter}</strong>
             <button onClick={add}>+</button>
         </div>
-        <button onClick={()=>addToCart(counter)}>add to cart</button>
+        <button onClick={()=>addToCart(counter)}>Add to cart</button>
     </>
   )
 }
