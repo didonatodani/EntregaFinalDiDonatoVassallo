@@ -1,0 +1,32 @@
+/* <div className="cart">
+{
+    cart.map(product =><CartItem key={product.item.id} {...product}/>)
+}
+
+<h3>Total: {total} €</h3>
+<h3>Items in cart: {totalQuantity}u</h3>
+<button onClick={()=> emptyCart()}>Empty cart</button>
+<Link to={'/checkout'}>
+    <button>Check Out</button>
+</Link>
+</div> */
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    h3{
+        padding: 20px;
+    }
+    .cart-main-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        button{
+            width: 200px;
+            height: 50px;
+            }
+        }
+}

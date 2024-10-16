@@ -38,9 +38,11 @@ const ItemDetail = ({id, name, price, size, img, detail, stock}) => {
           <p>Size: {size}</p>
           <p>{detail}</p>
           {
-            addQuantity > 0 ? (<Link to="/cart">Go to cart</Link>) : ( stock != 0 ? <Counter initial={1} stock={stock} addToCart={quantityHandler}/> : <strong>Out of stock</strong>)
+            addQuantity > 0 ? (<Link to="/cart"><button>FINISH SHOPPING</button></Link>) : ( stock != 0 ? <Counter initial={1} stock={stock} addToCart={quantityHandler}/> : <strong>Out of stock</strong>)
           }
-          <Link to={-1}>Back</Link>
+          <Link to={-1}>
+            <button>Back</button>
+          </Link>
         </div>
     </div>
   )

@@ -3,25 +3,40 @@ header{
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #4c7cf4;
-    padding: 10px;
+    padding: 20px 50px;
 }
 
 .logo{
-    margin: 10px;
-    width: 110px;
+    width: 120px;
+}
+.logo:hover{
+    transform: scale(1.2);
+    transition-duration: 1.7s;
 }
 
 ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 0;
 }
 
 li {
     list-style-type: none;
-    margin: 15px;
-    a{
-        text-decoration: none;
-        color: white;
-    }
+    margin: 20px;
+}
+li:hover{
+    box-shadow: 5px 5px 5px #242424;
+    transition-duration: 1.7s;
+}
+
+#dropdown-basic, .dropdown-menu, .dropdown-item, .dropdown-item.active {
+    background-color: #2f2f2f;
+    border: none;
+    color: #faf9f8;
+}
+#dropdown-basic:hover, .dropdown-item:hover{
+    background-color: #2f2f2f;
+    color: #4c7cf4;
 }

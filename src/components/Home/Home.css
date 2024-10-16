@@ -1,0 +1,20 @@
+.home-div{
+    height: 700px;
+    background-image: url(../../public/portada1.jpg);
+    background-position: bottom;
+    background-size: contain;
+}
+h1{
+    font-family: "Londrina Sketch", sans-serif;
+    font-size: 3.75rem;
+    padding-top: 23%;
+    padding-left: 48%;
+}
+.shop-button{
+    margin-left: 70%;
+    margin-top: 10px;
+    background-color: #faf9f8;
+}
+.shop-button:hover{
+    color:#faf9f8;
+}

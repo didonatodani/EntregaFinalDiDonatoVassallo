@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom"
+import "../Home/Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
-        <img src="../portada1.jpg" alt="" />
-        <Link  to={"/allproducts"}>SHOP NOW</Link>
+    <div className="home-div">
+        <h1>BONEES MOMENTOS :)</h1>
+        <Link  to={"/allproducts"}>
+          <button className="shop-button">SHOP NOW</button>
+        </Link>
     </div>
   )
 }

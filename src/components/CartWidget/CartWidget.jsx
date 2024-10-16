@@ -8,16 +8,17 @@ const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext);
 
   return (
-    <div className="cartDiv">
-        {
-        totalQuantity > 0 && <strong>{totalQuantity}</strong>
-        }
+      <div className="cart-div">
+          {
+          totalQuantity > 0 && <strong className="cart-num">{totalQuantity}</strong>
+          }
 
-        <Link to={"/cart"}>
-          <img className={`img-carrito ${totalQuantity > 0 ? 'valid' : ''}`} src="../cart.png" alt="cart icon"/>
-        </Link>
-    </div>
+          <Link to={"/cart"}>
+            <img className="img-carrito" src="../cart.png" alt="cart icon"/>
+          </Link>
+      </div>
   )
 }
 
 export default CartWidget
+

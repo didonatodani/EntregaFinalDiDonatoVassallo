@@ -18,7 +18,7 @@ const Counter = ({initial, stock, addToCart}) => {
 
   return (
     <>
-        <div>
+        <div className="counter-div">
             <button onClick={substract}>-</button>
             <strong>{counter}</strong>
             <button onClick={add}>+</button>

@@ -11,21 +11,26 @@ const Cart = () => {
         return(
             <div className="emptyCart">
                 <h2>Your cart is empty</h2>
-                <Link to={"/allproducts"}>Go to Bonees Products &nbsp;&nbsp;:)</Link>
+                <Link to={"/allproducts"}>
+                    <button>Go to Bonees Products &nbsp;&nbsp;:)</button>
+                </Link>
             </div>
         )
     }
   return (
-    <div>
+    <div className="cart">
         {
             cart.map(product =><CartItem key={product.item.id} {...product}/>)
         }
 
         <h3>Total: {total} €</h3>
         <h3>Items in cart: {totalQuantity}u</h3>
-        <button onClick={()=> emptyCart()}>empty cart</button>
-        <Link to={'/checkout'}>Check Out</Link>
-
+        <div className="cart-main-buttons">
+            <button onClick={()=> emptyCart()} >Empty cart</button>
+            <Link to={'/checkout'}>
+                <button>Check Out</button>
+            </Link>
+        </div>
     </div>
   )
 }

@@ -26,6 +26,9 @@ const NavBar = () => {
                 </Dropdown.Menu>
               </Dropdown>            
           </li>
+          <li>
+              <NavLink to={"/aboutus"}>ABOUT US</NavLink>
+          </li>
         </ul>
       </nav>
       <CartWidget/>

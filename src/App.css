@@ -1,11 +1,51 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:100,300,700');
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
 
-body{
-    font-family: 'Roboto'; 
-    background-color: #2f2f2f;
-    color: #fdfdfd;
+/* font-family: "Montserrat", sans-serif;
+font-family: "Londrina Sketch", sans-serif; */
+
+/* color: #4c7cf4;
+color: #2f2f2f;
+color: #faf9f8; */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a {
+body{
+    font-family: "Montserrat", sans-serif; 
+    background-color: #2f2f2f;
+}
+
+h1, h2, h3, h4, p, strong{
+    color: #faf9f8;
+    text-align: center;
+}
+
+h2{
+    padding: 20px 0;
+}
+
+a{
+    text-decoration: none;
+    color: #faf9f8;
+}
+a:hover{
     color: #4c7cf4;
+}
+
+button{
+    background-color: #2f2f2f;
+    color: #4c7cf4;
+    border: 1px solid #4c7cf4;
+    padding: .5%;
+}
+button:hover{
+    transition-duration: 1s;
+    color: #2f2f2f;
+    background-color: #4c7cf4;
 }

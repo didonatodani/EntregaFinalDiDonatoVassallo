@@ -3,7 +3,7 @@ import "./WorkInProgress.css"
 const WorkInProgress = () => {
   return (
     <>
-      <img className="progress-img" src="../workInProgress.png" alt="" />
+      <img className="progress-img" src="../workInProgress.png" alt="work in progress image" />
     </>
   )
 }
