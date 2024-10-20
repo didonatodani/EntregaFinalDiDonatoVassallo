@@ -1,16 +1,3 @@
-/* <div className="cart">
-{
-    cart.map(product =><CartItem key={product.item.id} {...product}/>)
-}
-
-<h3>Total: {total} €</h3>
-<h3>Items in cart: {totalQuantity}u</h3>
-<button onClick={()=> emptyCart()}>Empty cart</button>
-<Link to={'/checkout'}>
-    <button>Check Out</button>
-</Link>
-</div> */
-
 .cart{
     display: flex;
     flex-direction: column;
@@ -29,4 +16,12 @@
             height: 50px;
             }
         }
+}
+
+.empty-cart{
+    padding: 30px;
+    text-align: center;
+    button{
+        margin: 40px;
+    }
 }

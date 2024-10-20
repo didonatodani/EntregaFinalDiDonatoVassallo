@@ -9,8 +9,8 @@ const Cart = () => {
     const {cart, total, totalQuantity, emptyCart} = useContext(CartContext);
     if (totalQuantity === 0){
         return(
-            <div className="emptyCart">
-                <h2>Your cart is empty</h2>
+            <div className="empty-cart">
+                <h2>Your cart is empty! <br/>:(</h2>
                 <Link to={"/allproducts"}>
                     <button>Go to Bonees Products &nbsp;&nbsp;:)</button>
                 </Link>

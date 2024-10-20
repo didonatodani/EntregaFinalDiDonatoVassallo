@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Footer.css"
 
 const Footer = () => {
@@ -6,7 +7,9 @@ const Footer = () => {
     <footer className="footer">
         <small>© 2024, BONEES</small>
         <div className="footer-img">
-            <img src="../boneesDias.png" alt="" />
+            <Link  to={"./"}>
+              <img src="../boneesDias.png" alt="" />
+            </Link>
             <p>BONEES MOMENTOS every day</p>
         </div>
         <div className="social-media">
