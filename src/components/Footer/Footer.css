@@ -1,0 +1,21 @@
+.footer{
+    padding: 30px 80px;
+    border-top: 1px solid #4c7cf4;
+    display: flex;
+    justify-content: space-around;
+    align-items:end;
+    text-align: center;
+    small{
+        color: #faf9f8;
+    }
+    p{
+        margin: 0;
+    }
+    .icon-link{
+        padding:10px;
+    }
+    .icon-link:hover{
+        border: 1px solid #4c7cf4;
+        transition: 300ms;
+    }
+}

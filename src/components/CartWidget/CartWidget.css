@@ -8,6 +8,11 @@
     }
     .img-carrito {
         width: 40px;
+        
+    }
+    .img-carrito:hover{
+        border: 1px solid #4c7cf4;
+        transition: 300ms;
     }
     .cart-num{
         color: #4c7cf4;

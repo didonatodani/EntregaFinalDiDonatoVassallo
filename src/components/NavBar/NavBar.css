@@ -10,7 +10,7 @@ header{
     width: 120px;
 }
 .logo:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition-duration: 1.7s;
 }
 
@@ -24,11 +24,12 @@ ul {
 
 li {
     list-style-type: none;
-    margin: 20px;
+    margin: 10px;
+    padding: 10px;
 }
 li:hover{
-    box-shadow: 5px 5px 5px #242424;
-    transition-duration: 1.7s;
+    border: 1px solid #4c7cf4;
+    transition: 300ms;
 }
 
 #dropdown-basic, .dropdown-menu, .dropdown-item, .dropdown-item.active {
