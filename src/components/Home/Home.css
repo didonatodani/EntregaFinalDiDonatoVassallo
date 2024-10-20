@@ -1,6 +1,6 @@
 .home-div{
     height: 700px;
-    background-image: url(../../public/portada1.jpg);
+    background-image: url(../portada1.jpg);
     background-position: bottom;
     background-size: contain;
 }

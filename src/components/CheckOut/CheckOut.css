@@ -1,0 +1,46 @@
+form{
+    display: flex;
+    justify-content: space-around;
+    .check-out-product{
+        padding: 30px;
+        text-align: right;
+        align-content: center;
+        font-weight: 800;
+    }
+    .form-data-div{
+        padding: 20px;
+        border: #4c7cf4 1px solid;
+        border-radius: 10px;
+        width: 45%;
+        height: 350px;
+        align-content: center;
+        .form-data{
+            margin: 15px;
+            label{
+                width: 50%;
+                color: white;
+                background-color: #2f2f2f;
+                border-bottom: #4c7cf4 1px solid;
+            }
+            input{
+                width: 50%;
+                border: none;
+            }
+            button{
+                width: 50%;
+                margin-left: 50%;
+            }
+        }
+        
+    }
+}
+
+.thank-you-h3{
+    margin: 20px;
+    text-align: center;
+    line-height: 60px;
+    strong{
+        background-color: #4c7cf4;
+        border-radius: 5px;
+    }
+}

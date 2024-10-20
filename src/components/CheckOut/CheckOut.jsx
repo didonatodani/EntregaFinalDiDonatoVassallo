@@ -3,6 +3,7 @@ import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import "./CheckOut.css"
 
 const CheckOut = () => {
   const [name, setName] = useState("");
@@ -84,42 +85,43 @@ const CheckOut = () => {
         totalQuantity != 0 || orderId ? (
 
             orderId ? (
-                <h3>THANK YOU FOR BUYING BONEES! Your order ID is: {orderId}</h3>
+                <h3 className="thank-you-h3">THANK YOU FOR BUYING BONEES! <br/> Your order ID is: <strong>{orderId}</strong></h3>
             ) : (
                 <form onSubmit={formHandler}>
 
                     { cart.map((product) => (
 
-                        <div key={product.item.id}>
+                        <div className="check-out-product" key={product.item.id}>
                             <p>{product.item.name}</p>
                             <p>{product.item.price}€ x {product.quantity}</p>
                             <p>{product.item.price}€</p>
                         </div>
                     ))}
-
-                    <div>
-                        <label htmlFor="name">NAME:</label>
-                        <input type="text" id="name" onChange={(e) => setName(e.target.value)} value={name}/>
-                    </div>
-                    <div>
-                        <label htmlFor="surName">SURNAME:</label>
-                        <input type="text" id="surName" onChange={(e) => setSurName(e.target.value)} value={surName}/>
-                    </div>
-                    <div>
-                        <label htmlFor="phone">PHONE:</label>
-                        <input type="number" id="phone" onChange={(e) => setPhone(e.target.value)} value={phone}/>
-                    </div>
-                    <div>
-                        <label htmlFor="email">EMAIL:</label>
-                        <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email}/>
-                    </div>
-                    <div>
-                        <label htmlFor="emailConfirmation">CONFIRM EMAIL:</label>
-                        <input type="email" id="emailConfirmation" onChange={(e) => setEmailConfirmation(e.target.value)} value={emailConfirmation}/>
-                    </div>
-                    <div>
-                        {error && <h3>{error}</h3>}
-                        <button type="submit">CONFIRM ORDER</button>
+                    <div className="form-data-div">
+                        <div className="form-data">
+                            <label htmlFor="name">NAME:</label>
+                            <input type="text" id="name" onChange={(e) => setName(e.target.value)} value={name}/>
+                        </div>
+                        <div className="form-data">
+                            <label htmlFor="surName">SURNAME:</label>
+                            <input type="text" id="surName" onChange={(e) => setSurName(e.target.value)} value={surName}/>
+                        </div>
+                        <div className="form-data">
+                            <label htmlFor="phone">PHONE:</label>
+                            <input type="number" id="phone" onChange={(e) => setPhone(e.target.value)} value={phone}/>
+                        </div>
+                        <div className="form-data">
+                            <label htmlFor="email">EMAIL:</label>
+                            <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                        </div>
+                        <div className="form-data">
+                            <label htmlFor="emailConfirmation">CONFIRM EMAIL:</label>
+                            <input type="email" id="emailConfirmation" onChange={(e) => setEmailConfirmation(e.target.value)} value={emailConfirmation}/>
+                        </div>
+                        <div className="form-data">
+                            {error && <h3>{error}</h3>}
+                            <button type="submit">CONFIRM ORDER</button>
+                        </div>
                     </div>
                 </form>
             )): (

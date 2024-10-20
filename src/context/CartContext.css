@@ -1,0 +1,15 @@
+div:where(.swal2-container) div:where(.swal2-popup){
+    background-color: #2f2f2f;
+    color: #faf9f8;
+    
+button{
+    background-color: #2f2f2f;
+    color: #4c7cf4;
+    border: 1px solid #4c7cf4;
+}
+button:hover{
+    transition-duration: 1s;
+    color: #2f2f2f;
+    background-color: #4c7cf4;
+}
+}
